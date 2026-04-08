@@ -1,0 +1,17 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.signcolumn = "yes"
+vim.o.winborder = "single"
+vim.opt.cursorline =true
+vim.opt.tabstop = 2      -- Number of spaces that a <Tab> in the file counts for
+vim.opt.softtabstop = 2  -- Number of spaces that a <Tab> counts for while performing editing operations
+vim.opt.shiftwidth = 2   -- Number of spaces to use for each step of (auto)indent
+vim.opt.expandtab = true -- Use spaces instead of tabs
+vim.opt.colorcolumn = "140"
+vim.opt.swapfile = false
+vim.opt.termguicolors = true
+
