@@ -13,7 +13,9 @@ vim.pack.add({
   { src = 'https://github.com/williamboman/mason-lspconfig.nvim' },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/saghen/blink.cmp" },
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter",
+    hooks = { post_install = ':TSUpdate'}
+  },
   -- EDITOR --
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/saghen/blink.indent" },
@@ -23,15 +25,12 @@ vim.pack.add({
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/folke/trouble.nvim" },
   { src = "https://github.com/akinsho/toggleterm.nvim" },
-  { src = "https://github.com/esensar/nvim-dev-container" },
   { src = "https://github.com/Bekaboo/dropbar.nvim" },
 })
 
-vim.cmd.colorscheme("solarized-osaka")
+vim.cmd.colorscheme("night-owl")
 
 require("dropbar").setup()
-require("devcontainer").setup{}
-
 require("gitsigns").setup({
   signs = {
     add = { text = "+" },
@@ -72,7 +71,7 @@ require("mini.bufremove").setup()
 
 local ts_parsers = { "lua", "html", "css", "javascript", "typescript", "python", "go", "rust", "dockerfile", "vim",
   "vimdoc", "json" }
-local servers = { "lua_ls", "ts_ls", "html", "cssls", "rust_analyzer", "gopls", "emmet_language_server", "jsonls" }
+local servers = { "lua_ls", "ts_ls", "html", "cssls", "rust_analyzer", "gopls", "emmet_language_server", "jsonls", "dockerls" }
 
 require("nvim-treesitter").install(ts_parsers)
 require("mason").setup()

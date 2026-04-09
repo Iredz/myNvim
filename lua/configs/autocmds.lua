@@ -32,3 +32,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+-- Help Window splits to the right
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "help",
+  command = "wincmd L"
+})

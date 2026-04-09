@@ -14,4 +14,13 @@ vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.colorcolumn = "140"
 vim.opt.swapfile = false
 vim.opt.termguicolors = true
-
+vim.opt.scrolloff = 10
+vim.opt.mouse = 'a'
+vim.opt.linebreak = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.list = true
+vim.opt.listchars = { 
+  -- tab = '»' ,
+  trail = '·',
+  nbsp = '␣'}

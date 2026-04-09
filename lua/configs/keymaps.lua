@@ -34,7 +34,7 @@ map("n", "<space>bf", vim.lsp.buf.format, { desc = "Buffer Format" })
 map("n", "<leader>ff", "<CMD>Pick files<CR>", { desc = "Find files" })
 map("n", "<leader>fh", "<CMD>Pick help<CR>", { desc = "Find help" })
 map("n", "<leader>fg", "<CMD>Pick grep<CR>", { desc = "Find word by grep" })
-map("n", "<leader><space>", "<CMD>Pick buffers<CR>", { desc = "Find files" })
+map("n", "<leader><leader>", "<CMD>Pick buffers<CR>", { desc = "Find files" })
 
 -- Trouble
 map("n", "<leader>q", "<CMD>Trouble diagnostics toggle<CR>")
@@ -48,3 +48,13 @@ map("n", "<leader>e", function()
     require("oil").open()
   end
 end, { desc = "Toggle Oil" })
+
+-- LSP
+map("n", "<leader>ca", function()
+  vim.lsp.buf.code_action()
+end, { desc = "Code Action" })
+
+map("n","<leader>rn" ,function ()
+  vim.lsp.buf.rename()
+end, { desc = "Rename references" })
+
