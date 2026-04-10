@@ -31,14 +31,47 @@ end, { desc = "Delete Buffer (Force)" })
 -- Format
 map("n", "<space>ff", vim.lsp.buf.format, { desc = "Buffer Format" })
 
--- Pick
-map("n", "<leader>sf", "<CMD>Pick files<CR>", { desc = "Search files" })
-map("n", "<leader>sh", "<CMD>Pick help<CR>", { desc = "Search help" })
-map("n", "<leader>sg", "<CMD>Pick grep<CR>", { desc = "Search word by grep" })
-map("n", "<leader><leader>", "<CMD>Pick buffers<CR>", { desc = "Search buffers" })
+-- Snacks
+map("n", "<leader>sf", function()
+  Snacks.picker.files()
+end, { desc = "Search files" })
+
+map("n", "<leader><space>", function()
+  Snacks.picker.smart()
+end, { desc = "Smart search files" })
+
+map("n", "<leader>sh", function()
+  Snacks.picker.help()
+end, { desc = "Search help" })
+
+map("n", "<leader>sg", function()
+  Snacks.picker.grep_buffers()
+end, { desc = "Search grep in buffers" })
+
+map("n", "<leader>sG", function()
+  Snacks.picker.grep()
+end, { desc = "Search grep" })
+
+map("n", "<leader>sb", function()
+  Snacks.picker.buffers()
+end, { desc = "Search buffers" })
+
+map("n", "<leader>lg", function()
+  Snacks.lazygit()
+end, { desc = "Toggle LazyGit" })
 
 -- Trouble
 map("n", "<leader>q", "<CMD>Trouble diagnostics toggle<CR>")
+
+
+-- Todo Comments
+map("n", "<leader>st", function()
+  Snacks.picker.todo_comments()
+end, { desc = "Search todo comments" })
+
+map("n", "<leader>sT", function()
+  Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
+end, { desc = "Search todo comments" })
 
 -- Oil
 local bufremove = require("mini.bufremove")
@@ -58,3 +91,7 @@ end, { desc = "Code Action" })
 map("n", "<leader>rn", function()
   vim.lsp.buf.rename()
 end, { desc = "Rename references" })
+
+map('n', '<leader>th', function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle Inlay Hints" })

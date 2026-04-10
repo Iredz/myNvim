@@ -30,9 +30,30 @@ vim.pack.add({
   { src = "https://github.com/folke/trouble.nvim" },
   { src = "https://github.com/akinsho/toggleterm.nvim" },
   { src = "https://github.com/Bekaboo/dropbar.nvim" },
+  { src = "https://github.com/folke/snacks.nvim" },
+  { src = "https://github.com/folke/todo-comments.nvim" },
+  { src = "https://github.com/nvim-lua/plenary.nvim"},
 })
 
-vim.cmd.colorscheme("tokyonight-night")
+vim.cmd.colorscheme("night-owl")
+
+require("todo-comments").setup({
+})
+require("snacks").setup({
+  lazygit = {
+    configure = true,
+  },
+  picker = {
+    enabled = true,
+    ui_select = true,
+    previewers = {
+      diff = {
+        style = "fancy"
+      }
+    },
+    preset = "ivy",
+  }
+})
 
 require("dropbar").setup()
 require("gitsigns").setup({
@@ -45,7 +66,9 @@ require("gitsigns").setup({
   }
 })
 
-require("trouble").setup()
+require("trouble").setup({
+
+})
 require("toggleterm").setup({
   open_mapping = [[<c-\>]],
   direction = "float"
@@ -66,7 +89,7 @@ require("fidget").setup({
   },
 })
 
-require("mini.pick").setup()
+-- require("mini.pick").setup()
 require("mini.statusline").setup()
 require("mini.surround").setup()
 require("mini.pairs").setup()
@@ -118,6 +141,8 @@ require("oil").setup({
 require("configs.autocmds")
 require("configs.keymaps")
 
-vim.ui.select = require('mini.pick').ui_select
-vim.api.nvim_set_hl(0, 'MiniPickSelection', { link = 'Visual' })
-vim.api.nvim_set_hl(0, 'MiniPickMatchCurrent', { bold = true, foreground = '#f0f2f2' })
+-- vim.ui.select = require('mini.pick').ui_select
+-- vim.api.nvim_set_hl(0, 'MiniPickSelection', { link = 'Visual' })
+-- vim.api.nvim_set_hl(0, 'MiniPickMatchCurrent', { bold = true, foreground = '#f0f2f2' })
+
+
