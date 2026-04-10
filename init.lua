@@ -1,5 +1,4 @@
 require("configs.options")
-
 vim.pack.add({
   --  COLORSCHEMES --
   { src = "https://github.com/catppuccin/nvim" },
@@ -14,7 +13,7 @@ vim.pack.add({
   { src = "https://github.com/neovim/nvim-lspconfig" },
   {
     src = "https://github.com/saghen/blink.cmp",
-    version = vim.version.range("*")
+    version = vim.version.range("1.*")
   },
   { src = "https://github.com/rafamadriz/friendly-snippets" },
   {
@@ -33,7 +32,7 @@ vim.pack.add({
   { src = "https://github.com/Bekaboo/dropbar.nvim" },
 })
 
-vim.cmd.colorscheme("night-owl")
+vim.cmd.colorscheme("tokyonight-night")
 
 require("dropbar").setup()
 require("gitsigns").setup({
