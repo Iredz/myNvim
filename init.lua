@@ -12,9 +12,13 @@ vim.pack.add({
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = 'https://github.com/williamboman/mason-lspconfig.nvim' },
   { src = "https://github.com/neovim/nvim-lspconfig" },
-  { src = "https://github.com/saghen/blink.cmp" },
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter",
-    hooks = { post_install = ':TSUpdate'}
+  { 
+    src = "https://github.com/saghen/blink.cmp",
+    version = vim.version.range("*")
+  },
+  {
+    src = "https://github.com/nvim-treesitter/nvim-treesitter",
+    hooks = { post_install = 'TSUpdate' }
   },
   -- EDITOR --
   { src = "https://github.com/stevearc/oil.nvim" },
@@ -49,10 +53,10 @@ require("toggleterm").setup({
 
 require("fidget").setup({
   notification = {
-    override_vim_notify = true, -- Redirect vim.notify() to Fidget
+    override_vim_notify = true,
     window = {
-      winblend = 0,             -- Background transparency (0-100)
-      border = "none",          -- Border style
+      winblend = 0,
+      border = "solid",
     },
   },
   progress = {
@@ -71,7 +75,8 @@ require("mini.bufremove").setup()
 
 local ts_parsers = { "lua", "html", "css", "javascript", "typescript", "python", "go", "rust", "dockerfile", "vim",
   "vimdoc", "json" }
-local servers = { "lua_ls", "ts_ls", "html", "cssls", "rust_analyzer", "gopls", "emmet_language_server", "jsonls", "dockerls" }
+local servers = { "lua_ls", "ts_ls", "html", "cssls", "rust_analyzer", "gopls", "emmet_language_server", "jsonls",
+  "dockerls" }
 
 require("nvim-treesitter").install(ts_parsers)
 require("mason").setup()

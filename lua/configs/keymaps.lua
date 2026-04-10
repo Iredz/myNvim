@@ -4,6 +4,7 @@ map("n", "<C-h>", "<C-w>h")
 map("n", "<C-j>", "<C-w>j")
 map("n", "<C-k>", "<C-w>k")
 map("n", "<C-l>", "<C-w>l")
+
 -- Buffers
 map("n", "<S-h>", ":bp<CR>", { desc = "Switch to previous buffer" })
 map("n", "<S-l>", ":bn<CR>", { desc = "Switch to next buffer" })
@@ -21,20 +22,20 @@ map('n', '<leader>bd', function()
     bd(0, false)
   end
 end, { desc = "Delete Buffer" })
---
+
 -- Force delete current buffer (ignore changes)
 vim.keymap.set('n', '<Leader>bD', function()
   require("mini.bufremove").delete(0, true)
 end, { desc = "Delete Buffer (Force)" })
 
 -- Format
-map("n", "<space>bf", vim.lsp.buf.format, { desc = "Buffer Format" })
+map("n", "<space>ff", vim.lsp.buf.format, { desc = "Buffer Format" })
 
 -- Pick
-map("n", "<leader>ff", "<CMD>Pick files<CR>", { desc = "Find files" })
-map("n", "<leader>fh", "<CMD>Pick help<CR>", { desc = "Find help" })
-map("n", "<leader>fg", "<CMD>Pick grep<CR>", { desc = "Find word by grep" })
-map("n", "<leader><leader>", "<CMD>Pick buffers<CR>", { desc = "Find files" })
+map("n", "<leader>sf", "<CMD>Pick files<CR>", { desc = "Search files" })
+map("n", "<leader>sh", "<CMD>Pick help<CR>", { desc = "Search help" })
+map("n", "<leader>sg", "<CMD>Pick grep<CR>", { desc = "Search word by grep" })
+map("n", "<leader><leader>", "<CMD>Pick buffers<CR>", { desc = "Search buffers" })
 
 -- Trouble
 map("n", "<leader>q", "<CMD>Trouble diagnostics toggle<CR>")
@@ -54,7 +55,6 @@ map("n", "<leader>ca", function()
   vim.lsp.buf.code_action()
 end, { desc = "Code Action" })
 
-map("n","<leader>rn" ,function ()
+map("n", "<leader>rn", function()
   vim.lsp.buf.rename()
 end, { desc = "Rename references" })
-
