@@ -99,7 +99,7 @@ require("mini.bufremove").setup()
 local ts_parsers = { "lua", "html", "css", "javascript", "typescript", "python", "go", "rust", "dockerfile", "vim",
   "vimdoc", "json" }
 local servers = { "lua_ls", "ts_ls", "html", "cssls", "rust_analyzer", "gopls", "emmet_language_server", "jsonls",
-  "dockerls" }
+  "dockerls", "tombi" }
 
 require("nvim-treesitter").install(ts_parsers)
 require("mason").setup()
@@ -145,4 +145,8 @@ require("configs.keymaps")
 -- vim.api.nvim_set_hl(0, 'MiniPickSelection', { link = 'Visual' })
 -- vim.api.nvim_set_hl(0, 'MiniPickMatchCurrent', { bold = true, foreground = '#f0f2f2' })
 
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- Clear specific background colors for better transparency
+vim.cmd("hi SignColumn guibg=NONE ctermbg=NONE")
 
