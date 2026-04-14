@@ -32,13 +32,19 @@ vim.pack.add({
   { src = "https://github.com/Bekaboo/dropbar.nvim" },
   { src = "https://github.com/folke/snacks.nvim" },
   { src = "https://github.com/folke/todo-comments.nvim" },
-  { src = "https://github.com/nvim-lua/plenary.nvim"},
+  { src = "https://github.com/nvim-lua/plenary.nvim" },
 })
 
 vim.cmd.colorscheme("night-owl")
 
-require("todo-comments").setup({
+require("todo-comments").setup()
+require("catppuccin").setup({
+  transparent_background = true,
 })
+require("tokyonight").setup({
+  transparent = true
+})
+
 require("snacks").setup({
   lazygit = {
     configure = true,
@@ -149,4 +155,3 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 -- Clear specific background colors for better transparency
 vim.cmd("hi SignColumn guibg=NONE ctermbg=NONE")
-
