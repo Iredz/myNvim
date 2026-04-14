@@ -95,3 +95,7 @@ end, { desc = "Rename references" })
 map('n', '<leader>th', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle Inlay Hints" })
+
+map('n', "<leader>li", function ()
+  vim.lsp.buf.implementation()
+end, { desc = "LSP Implementation" })
