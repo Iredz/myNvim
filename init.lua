@@ -33,16 +33,18 @@ vim.pack.add({
   { src = "https://github.com/folke/snacks.nvim" },
   { src = "https://github.com/folke/todo-comments.nvim" },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
+  { src = "https://github.com/barrettruth/live-server.nvim" },
 })
 
 vim.cmd.colorscheme("night-owl")
 
+
 require("todo-comments").setup()
 require("catppuccin").setup({
-  transparent_background = true,
+  transparent_background = false,
 })
 require("tokyonight").setup({
-  transparent = true
+  transparent = false
 })
 
 require("snacks").setup({
@@ -151,7 +153,7 @@ require("configs.keymaps")
 -- vim.api.nvim_set_hl(0, 'MiniPickSelection', { link = 'Visual' })
 -- vim.api.nvim_set_hl(0, 'MiniPickMatchCurrent', { bold = true, foreground = '#f0f2f2' })
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 -- Clear specific background colors for better transparency
-vim.cmd("hi SignColumn guibg=NONE ctermbg=NONE")
+-- vim.cmd("hi SignColumn guibg=NONE ctermbg=NONE")
