@@ -38,6 +38,10 @@ vim.pack.add({
 
 vim.cmd.colorscheme("night-owl")
 
+vim.g.live_server = {
+  port = 5500,
+  browser = true
+}
 
 require("todo-comments").setup()
 require("catppuccin").setup({
