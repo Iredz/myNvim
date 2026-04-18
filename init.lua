@@ -7,6 +7,7 @@ vim.pack.add({
   { src = "https://github.com/folke/tokyonight.nvim" },
   { src = "https://github.com/oxfist/night-owl.nvim" },
   { src = "https://github.com/craftzdog/solarized-osaka.nvim" },
+  { src = "https://github.com/alexvzyl/nordic.nvim" },
   -- LSP --
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = 'https://github.com/williamboman/mason-lspconfig.nvim' },
@@ -36,7 +37,7 @@ vim.pack.add({
   { src = "https://github.com/barrettruth/live-server.nvim" },
 })
 
-vim.cmd.colorscheme("night-owl")
+vim.cmd.colorscheme("nordic")
 
 vim.g.live_server = {
   port = 5500,
