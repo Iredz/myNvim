@@ -24,5 +24,5 @@ vim.opt.listchars = {
   -- tab = '»' ,
   trail = '·',
   nbsp = '␣'}
-
+vim.opt.laststatus = 3
 
