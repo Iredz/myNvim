@@ -110,9 +110,9 @@ require("mini.icons").setup()
 require("mini.bufremove").setup()
 
 local ts_parsers = { "lua", "html", "css", "javascript", "typescript", "python", "go", "rust", "dockerfile", "vim",
-  "vimdoc", "json" }
+  "vimdoc", "json", "bash" }
 local servers = { "lua_ls", "ts_ls", "html", "cssls", "rust_analyzer", "gopls", "emmet_language_server", "jsonls",
-  "dockerls", "tombi" }
+  "dockerls", "tombi", "bashls" }
 
 require("nvim-treesitter").install(ts_parsers)
 require("mason").setup()
