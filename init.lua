@@ -8,6 +8,7 @@ vim.pack.add({
   { src = "https://github.com/oxfist/night-owl.nvim" },
   { src = "https://github.com/craftzdog/solarized-osaka.nvim" },
   { src = "https://github.com/alexvzyl/nordic.nvim" },
+  { src = "https://github.com/sainnhe/gruvbox-material" },
   -- LSP --
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = 'https://github.com/williamboman/mason-lspconfig.nvim' },
@@ -37,10 +38,13 @@ vim.pack.add({
   { src = "https://github.com/barrettruth/live-server.nvim" },
 })
 
-vim.cmd.colorscheme("nordic")
+vim.g.gruvbox_material_enable_italic = true
+vim.g.gruvbox_material_background = "medium"
+vim.g.gruvbox_material_foreground = "material"
 
+vim.cmd.colorscheme("gruvbox-material")
 vim.g.live_server = {
-  port = 5500,
+  port = 8080,
   browser = true
 }
 
