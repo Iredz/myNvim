@@ -25,4 +25,5 @@ vim.opt.listchars = {
   trail = '·',
   nbsp = '␣'}
 vim.opt.laststatus = 3
-
+vim.opt.cmdheight = 1
+vim.opt.showmode = false
