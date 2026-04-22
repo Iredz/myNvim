@@ -20,10 +20,19 @@ vim.opt.linebreak = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.list = true
-vim.opt.listchars = { 
+vim.opt.listchars = {
   -- tab = '»' ,
   trail = '·',
   nbsp = '␣'}
 vim.opt.laststatus = 3
 vim.opt.cmdheight = 1
 vim.opt.showmode = false
+
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '●', -- Change the prefix (e.g., '●', '■', 'x')
+    spacing = 4,   -- Add spacing between code and virtual text
+    severity_sort = true, -- Sort by severity
+  },
+})
+
