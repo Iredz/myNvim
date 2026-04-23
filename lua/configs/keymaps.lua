@@ -99,3 +99,9 @@ end, { desc = "Toggle Inlay Hints" })
 map('n', "<leader>li", function ()
   vim.lsp.buf.implementation()
 end, { desc = "LSP Implementation" })
+
+-- Lazygit
+map('n','<leader>lg', function ()
+  Snacks.lazygit()
+end, { desc = 'Toggle Lazygit' })
+

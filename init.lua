@@ -45,7 +45,7 @@ vim.g.gruvbox_material_foreground = "material"
 vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
 vim.g.gruvbox_material_better_performance = 1
 
-vim.cmd.colorscheme("gruvbox-material")
+vim.cmd.colorscheme("rose-pine")
 vim.g.live_server = {
   port = 8080,
   browser = true
