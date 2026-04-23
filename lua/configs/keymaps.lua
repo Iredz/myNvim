@@ -61,8 +61,7 @@ map("n", "<leader>lg", function()
 end, { desc = "Toggle LazyGit" })
 
 -- Trouble
-map("n", "<leader>q", "<CMD>Trouble diagnostics toggle<CR>")
-
+map("n", "<leader>q", "<CMD>Trouble diagnostics toggle<CR>", { desc = 'Toggle trouble diagnostics' })
 
 -- Todo Comments
 map("n", "<leader>st", function()
@@ -96,7 +95,7 @@ map('n', '<leader>th', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle Inlay Hints" })
 
-map('n', "<leader>li", function ()
+map('n', "<leader>li", function()
   vim.lsp.buf.implementation()
 end, { desc = "LSP Implementation" })
 
@@ -105,3 +104,8 @@ map('n','<leader>lg', function ()
   Snacks.lazygit()
 end, { desc = 'Toggle Lazygit' })
 
+
+-- VIM PACK UPDATE
+map('n', '<leader>vu', function()
+  vim.pack.update()
+end, { desc = 'Update installed plugins' })
