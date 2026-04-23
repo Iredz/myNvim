@@ -55,9 +55,7 @@ require("todo-comments").setup()
 require("catppuccin").setup({
   transparent_background = false,
 })
-require("tokyonight").setup({
-  transparent = false
-})
+require("tokyonight").setup()
 
 require("snacks").setup({
   lazygit = {
