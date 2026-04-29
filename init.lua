@@ -36,6 +36,7 @@ vim.pack.add({
   { src = "https://github.com/folke/todo-comments.nvim" },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/barrettruth/live-server.nvim" },
+  { src = "https://github.com/aserowy/tmux.nvim" },
 })
 
 vim.g.gruvbox_material_enable_italic = 1
@@ -45,7 +46,7 @@ vim.g.gruvbox_material_foreground = "material"
 vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
 vim.g.gruvbox_material_better_performance = 1
 
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("night-owl")
 vim.g.live_server = {
   port = 8080,
   browser = true
