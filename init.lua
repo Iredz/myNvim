@@ -129,6 +129,15 @@ vim.lsp.enable(servers)
 
 require("blink-cmp").setup({
   fuzzy = { implementation = "prefer_rust_with_warning" },
+  completion = {
+    documentation = {
+      auto_show = true,
+      auto_show_delay_ms = 500, -- Delay before showing
+    },
+    ghost_text = {
+      enabled = true, -- Show completion as ghost text
+    },
+  },
   sources = {
     providers = {
       snippets = {
