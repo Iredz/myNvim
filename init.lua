@@ -36,7 +36,7 @@ vim.pack.add({
     { src = "https://github.com/folke/snacks.nvim" },
     { src = "https://github.com/folke/todo-comments.nvim" },
     { src = "https://github.com/nvim-lua/plenary.nvim" },
-    { src = "https://github.com/barrettruth/live-server.nvim" },
+    { src = "https://git.barrettruth.com/barrettruth/live-server.nvim" },
     { src = "https://github.com/aserowy/tmux.nvim" },
 })
 

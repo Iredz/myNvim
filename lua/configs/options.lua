@@ -6,33 +6,33 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.signcolumn = "yes"
 vim.o.winborder = "single"
-vim.opt.cursorline =true
-vim.opt.tabstop = 4      -- Number of spaces that a <Tab> in the file counts for
-vim.opt.softtabstop = 4  -- Number of spaces that a <Tab> counts for while performing editing operations
-vim.opt.shiftwidth = 4   -- Number of spaces to use for each step of (auto)indent
-vim.opt.expandtab = true -- Use spaces instead of tabs
+vim.opt.cursorline = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 vim.opt.colorcolumn = "120"
 vim.opt.swapfile = false
 vim.opt.termguicolors = true
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 20
 vim.opt.mouse = 'a'
 vim.opt.linebreak = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.list = true
 vim.opt.listchars = {
-  -- tab = '»' ,
-  trail = '·',
-  nbsp = '␣'}
+    -- tab = '»' ,
+    trail = '·',
+    nbsp = '␣'
+}
 vim.opt.laststatus = 3
 vim.opt.cmdheight = 1
 vim.opt.showmode = false
 
 vim.diagnostic.config({
-  virtual_text = {
-    prefix = '●', -- Change the prefix (e.g., '●', '■', 'x')
-    spacing = 4,   -- Add spacing between code and virtual text
-    severity_sort = true, -- Sort by severity
-  },
+    virtual_text = {
+        prefix = '●', -- Change the prefix (e.g., '●', '■', 'x')
+        spacing = 4, -- Add spacing between code and virtual text
+        severity_sort = true, -- Sort by severity
+    },
 })
-
