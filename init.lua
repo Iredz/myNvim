@@ -10,6 +10,7 @@ vim.pack.add({
     { src = "https://github.com/alexvzyl/nordic.nvim" },
     { src = "https://github.com/sainnhe/gruvbox-material" },
     { src = "https://github.com/olimorris/onedarkpro.nvim" },
+    { src = "https://github.com/wurli/cobalt.nvim" },
     -- LSP --
     { src = "https://github.com/mason-org/mason.nvim" },
     { src = 'https://github.com/williamboman/mason-lspconfig.nvim' },
@@ -40,6 +41,8 @@ vim.pack.add({
     { src = "https://github.com/aserowy/tmux.nvim" },
 })
 
+vim.cmd.colorscheme("cobalt")
+
 vim.g.gruvbox_material_enable_italic = 1
 vim.g.gruvbox_material_enable_bold = 1
 vim.g.gruvbox_material_background = "medium"
@@ -48,6 +51,9 @@ vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
 vim.g.gruvbox_material_better_performance = 1
 
 require("onedarkpro").setup({
+    options = {
+        transparency = false
+    },
     highlights = {
         Comment = { italic = false, bold = false },
         Directory = { bold = true },
@@ -69,9 +75,6 @@ require("onedarkpro").setup({
         virtual_text = "NONE",
     }
 })
-
-
-vim.cmd.colorscheme("onedark_dark")
 
 vim.g.live_server = {
     port = 8080,
