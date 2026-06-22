@@ -5,7 +5,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.signcolumn = "yes"
-vim.o.winborder = "single"
+vim.o.winborder = "rounded"
 vim.opt.cursorline = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -28,7 +28,6 @@ vim.opt.listchars = {
 vim.opt.laststatus = 3
 vim.opt.cmdheight = 1
 vim.opt.showmode = false
-
 vim.diagnostic.config({
     virtual_text = {
         prefix = '●', -- Change the prefix (e.g., '●', '■', 'x')

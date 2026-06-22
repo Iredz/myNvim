@@ -36,14 +36,7 @@ vim.pack.add({
     { src = "https://github.com/aserowy/tmux.nvim" },
 })
 
-vim.cmd.colorscheme("nord")
-
-vim.g.gruvbox_material_enable_italic = 1
-vim.g.gruvbox_material_enable_bold = 1
-vim.g.gruvbox_material_background = "medium"
-vim.g.gruvbox_material_foreground = "material"
-vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
-vim.g.gruvbox_material_better_performance = 1
+vim.cmd.colorscheme("night-owl")
 
 vim.g.live_server = {
     port = 8080,
@@ -51,10 +44,10 @@ vim.g.live_server = {
 }
 
 require("todo-comments").setup()
+require("tokyonight").setup()
 require("catppuccin").setup({
     transparent_background = false,
 })
-require("tokyonight").setup()
 
 require("snacks").setup({
     lazygit = {
@@ -110,6 +103,7 @@ require("mini.surround").setup()
 require("mini.pairs").setup()
 require("mini.icons").setup()
 require("mini.bufremove").setup()
+require("mini.animate").setup()
 
 local ts_parsers = {
     "lua",
