@@ -6,6 +6,7 @@ vim.pack.add({
     { src = "https://github.com/rose-pine/neovim" },
     { src = "https://github.com/folke/tokyonight.nvim" },
     { src = "https://github.com/oxfist/night-owl.nvim" },
+    { src = "https://github.com/edeneast/nightfox.nvim"},
     -- LSP --
     { src = "https://github.com/mason-org/mason.nvim" },
     { src = "https://github.com/williamboman/mason-lspconfig.nvim" },
@@ -36,7 +37,7 @@ vim.pack.add({
     { src = "https://github.com/aserowy/tmux.nvim" },
 })
 
-vim.cmd.colorscheme("night-owl")
+vim.cmd.colorscheme("nordfox")
 
 vim.g.live_server = {
     port = 8080,
@@ -183,11 +184,3 @@ require("oil").setup({
 require("configs.autocmds")
 require("configs.keymaps")
 
--- vim.ui.select = require('mini.pick').ui_select
--- vim.api.nvim_set_hl(0, 'MiniPickSelection', { link = 'Visual' })
--- vim.api.nvim_set_hl(0, 'MiniPickMatchCurrent', { bold = true, foreground = '#f0f2f2' })
-
--- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
--- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
--- Clear specific background colors for better transparency
--- vim.cmd("hi SignColumn guibg=NONE ctermbg=NONE")
