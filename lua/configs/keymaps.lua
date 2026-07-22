@@ -60,6 +60,10 @@ map("n", "<leader>lg", function()
     Snacks.lazygit()
 end, { desc = "Toggle LazyGit" })
 
+map("n", "<leader>sc", function ()
+    Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+end, { desc = "Find Config Files" })
+
 -- Trouble
 map("n", "<leader>q", "<CMD>Trouble diagnostics toggle<CR>", { desc = 'Toggle trouble diagnostics' })
 

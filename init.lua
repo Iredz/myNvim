@@ -6,11 +6,11 @@ vim.pack.add({
     { src = "https://github.com/rose-pine/neovim" },
     { src = "https://github.com/folke/tokyonight.nvim" },
     { src = "https://github.com/oxfist/night-owl.nvim" },
-    { src = "https://github.com/edeneast/nightfox.nvim"},
+    { src = "https://github.com/edeneast/nightfox.nvim" },
     -- LSP --
-    { src = "https://github.com/mason-org/mason.nvim" },
-    { src = "https://github.com/williamboman/mason-lspconfig.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
+    -- FORMATTER --
+    { src = "https://github.com/stevearc/conform.nvim" },
     {
         src = "https://github.com/saghen/blink.cmp",
         version = vim.version.range("1.*"),
@@ -98,7 +98,6 @@ require("fidget").setup({
     },
 })
 
--- require("mini.pick").setup()
 require("mini.statusline").setup()
 require("mini.surround").setup()
 require("mini.pairs").setup()
@@ -128,6 +127,7 @@ local servers = {
     "cssls",
     "rust_analyzer",
     "gopls",
+    "pyright",
     "emmet_language_server",
     "jsonls",
     "dockerls",
@@ -135,11 +135,22 @@ local servers = {
     "bashls",
 }
 
-require("nvim-treesitter").install(ts_parsers)
-require("mason").setup()
-require("mason-lspconfig").setup({
-    ensure_installed = servers,
+require("conform").setup({
+    formatters_by_ft = {
+        lua = { "stylua" },
+        python = { "ruff", "blue", stop_after_first = true },
+        rust = { "rustfmt", lsp_format = "fallback" },
+        go = { "gofumpt", lsp_format = "fallback" },
+        javascript = { "prettierd", "prettier", stop_after_first = true },
+        typescipt = { "prettierd", "prettier", stop_after_first = true },
+        html = { "prettierd", "prettier", stop_after_first = true },
+        docker = {"dockerfmt"},
+        bash = {"beautysh"}
+    }
 })
+
+
+require("nvim-treesitter").install(ts_parsers)
 vim.lsp.enable(servers)
 
 require("blink-cmp").setup({
@@ -183,4 +194,3 @@ require("oil").setup({
 
 require("configs.autocmds")
 require("configs.keymaps")
-
