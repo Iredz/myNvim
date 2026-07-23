@@ -64,6 +64,15 @@ map("n", "<leader>sc", function ()
     Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
 end, { desc = "Find Config Files" })
 
+
+map("n", "<leader>sd", function ()
+    Snacks.picker.diagnostics_buffer()
+end, { desc = "Search diagnostics in current buffer"})
+
+map("n", "<leader>sD", function ()
+    Snacks.picker.diagnostics()
+end, { desc = "Search diagnostics"})
+
 -- Trouble
 map("n", "<leader>q", "<CMD>Trouble diagnostics toggle<CR>", { desc = 'Toggle trouble diagnostics' })
 

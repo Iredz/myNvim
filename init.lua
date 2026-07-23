@@ -24,7 +24,6 @@ vim.pack.add({
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/saghen/blink.indent" },
     { src = "https://github.com/j-hui/fidget.nvim" },
-    { src = "https://github.com/folke/lazydev.nvim" },
     { src = "https://github.com/nvim-mini/mini.nvim" },
     { src = "https://github.com/lewis6991/gitsigns.nvim" },
     { src = "https://github.com/folke/trouble.nvim" },
@@ -120,6 +119,9 @@ local ts_parsers = {
     "json",
     "bash",
 }
+
+require("nvim-treesitter").install(ts_parsers)
+
 local servers = {
     "lua_ls",
     "ts_ls",
@@ -135,6 +137,8 @@ local servers = {
     "bashls",
 }
 
+vim.lsp.enable(servers)
+
 require("conform").setup({
     formatters_by_ft = {
         lua = { "stylua" },
@@ -144,14 +148,10 @@ require("conform").setup({
         javascript = { "prettierd", "prettier", stop_after_first = true },
         typescipt = { "prettierd", "prettier", stop_after_first = true },
         html = { "prettierd", "prettier", stop_after_first = true },
-        docker = {"dockerfmt"},
-        bash = {"beautysh"}
+        docker = { "dockerfmt" },
+        bash = { "beautysh" }
     }
 })
-
-
-require("nvim-treesitter").install(ts_parsers)
-vim.lsp.enable(servers)
 
 require("blink-cmp").setup({
     fuzzy = { implementation = "prefer_rust_with_warning" },
@@ -180,7 +180,6 @@ require("blink-cmp").setup({
         },
     },
 })
-require("lazydev").setup()
 
 require("oil").setup({
     default_file_explorer = true,
