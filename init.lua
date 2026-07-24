@@ -34,9 +34,14 @@ vim.pack.add({
     { src = "https://github.com/nvim-lua/plenary.nvim" },
     { src = "https://git.barrettruth.com/barrettruth/live-server.nvim" },
     { src = "https://github.com/aserowy/tmux.nvim" },
+    { src = "https://github.com/catgoose/nvim-colorizer.lua" },
 })
 
-vim.cmd.colorscheme("nordfox")
+vim.cmd.colorscheme("duskfox")
+
+require("colorizer").setup({
+    options = { parsers = { css = true } },
+})
 
 vim.g.live_server = {
     port = 8080,
