@@ -7,10 +7,12 @@ vim.pack.add({
     { src = "https://github.com/folke/tokyonight.nvim" },
     { src = "https://github.com/oxfist/night-owl.nvim" },
     { src = "https://github.com/edeneast/nightfox.nvim" },
+    { src = "https://github.com/rebelot/kanagawa.nvim"},
     -- LSP --
     { src = "https://github.com/neovim/nvim-lspconfig" },
     -- FORMATTER --
     { src = "https://github.com/stevearc/conform.nvim" },
+    -- COMPLETIONS
     {
         src = "https://github.com/saghen/blink.cmp",
         version = vim.version.range("1.*"),
@@ -37,7 +39,7 @@ vim.pack.add({
     { src = "https://github.com/catgoose/nvim-colorizer.lua" },
 })
 
-vim.cmd.colorscheme("duskfox")
+vim.cmd.colorscheme("kanagawa-wave")
 
 require("colorizer").setup({
     options = { parsers = { css = true } },
@@ -166,7 +168,7 @@ require("blink-cmp").setup({
             auto_show_delay_ms = 500, -- Delay before showing
         },
         ghost_text = {
-            enabled = true, -- Show completion as ghost text
+            enabled = false, -- Show completion as ghost text
         },
     },
     sources = {
