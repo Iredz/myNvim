@@ -34,12 +34,12 @@ vim.pack.add({
     { src = "https://github.com/folke/snacks.nvim" },
     { src = "https://github.com/folke/todo-comments.nvim" },
     { src = "https://github.com/nvim-lua/plenary.nvim" },
-    { src = "https://git.barrettruth.com/barrettruth/live-server.nvim" },
+    { src = "https://forge.barrettruth.com/barrettruth/live-server.nvim"},
     { src = "https://github.com/aserowy/tmux.nvim" },
     { src = "https://github.com/catgoose/nvim-colorizer.lua" },
 })
 
-vim.cmd.colorscheme("kanagawa-wave")
+vim.cmd.colorscheme("nordfox")
 
 require("colorizer").setup({
     options = { parsers = { css = true } },
