@@ -7,7 +7,7 @@ vim.pack.add({
     { src = "https://github.com/folke/tokyonight.nvim" },
     { src = "https://github.com/oxfist/night-owl.nvim" },
     { src = "https://github.com/edeneast/nightfox.nvim" },
-    { src = "https://github.com/rebelot/kanagawa.nvim"},
+    { src = "https://github.com/rebelot/kanagawa.nvim" },
     -- LSP --
     { src = "https://github.com/neovim/nvim-lspconfig" },
     -- FORMATTER --
@@ -34,15 +34,38 @@ vim.pack.add({
     { src = "https://github.com/folke/snacks.nvim" },
     { src = "https://github.com/folke/todo-comments.nvim" },
     { src = "https://github.com/nvim-lua/plenary.nvim" },
-    { src = "https://forge.barrettruth.com/barrettruth/live-server.nvim"},
+    { src = "https://forge.barrettruth.com/barrettruth/live-server.nvim" },
     { src = "https://github.com/aserowy/tmux.nvim" },
     { src = "https://github.com/catgoose/nvim-colorizer.lua" },
+    { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+    { src = "https://github.com/nvim-lualine/lualine.nvim" }
 })
 
-vim.cmd.colorscheme("nordfox")
+vim.cmd.colorscheme("tokyonight-night")
 
 require("colorizer").setup({
     options = { parsers = { css = true } },
+})
+
+require('lualine').setup({
+    sections = {
+        lualine_x = {
+            {
+                function()
+                    local msg = 'No LSP'
+                    local clients = vim.lsp.get_clients({ bufnr = 0 })
+                    if #clients == 0 then
+                        return msg
+                    end
+                    msg = clients[1].name
+                    return msg
+                end,
+                icon = '',
+                -- color = { fg = '#B4Befe', gui = 'bold' },
+                color = { gui = 'bold' },
+            },
+        },
+    },
 })
 
 vim.g.live_server = {
@@ -104,7 +127,7 @@ require("fidget").setup({
     },
 })
 
-require("mini.statusline").setup()
+-- require("mini.statusline").setup()
 require("mini.surround").setup()
 require("mini.pairs").setup()
 require("mini.icons").setup()

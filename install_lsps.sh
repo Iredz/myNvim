@@ -1,6 +1,7 @@
 #!/bin/bash
 
-brew install lua-language-server
+#brew install lua-language-server
+mise use -g aqua:LuaLS/lua-language-server
 rustup component add rust-analyzer
 
 pnpm i -g typescript typescript-language-server pyright bash-language-server vscode-langservers-extracted @olrtg/emmet-language-server dockerfile-language-server-nodejs @fsouza/prettierd tombi
