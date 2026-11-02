@@ -6,6 +6,7 @@ rustup component add rust-analyzer
 
 pnpm i -g typescript typescript-language-server pyright bash-language-server vscode-langservers-extracted @olrtg/emmet-language-server dockerfile-language-server-nodejs @fsouza/prettierd tombi
 pnpm add --save-dev --save-exact prettier@3.9.6
+pnpm install -g tree-sitter-cli
 
 go install mvdan.cc/gofumpt@latest
 go install github.com/reteps/dockerfmt@latest
